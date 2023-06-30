@@ -1,0 +1,104 @@
+import Head from "next/head";
+import Image from "next/image";
+
+import Education from "@/components/Education";
+import Experiences from "@/components/Experiences";
+import Layout from "@/components/Layout";
+import Skills from "@/components/Skills";
+import TransitionEffect from "@/components/TransitionEffect";
+
+import {
+  getBiography,
+  getEducations,
+  getExperiences,
+  getSkills,
+} from "@/sanity-client/sanityClient";
+import { AnimatedNumbers } from "@/components/AnimatedNumber";
+import { AnimatedText } from "@/components/AnimatedText";
+
+import profilePic from "../../public/images/image.jpg";
+
+const AboutPage = ({ skills, experience, education, biography }: any) => {
+  console.log(biography);
+  return (
+    <>
+      <Head>
+        <title>Portfolio | About Page</title>
+        <meta
+          name="description"
+          content="Learn more about CodeBucks, a Next.js developer with a passion for 
+        creating innovative solutions. Discover tips for building a developer portfolio and insights on 
+        full-stack development, front-end development, and back-end development."
+        />
+      </Head>
+      <TransitionEffect />
+      <main className="flex w-full flex-col items-center justify-center dark:text-light">
+        <Layout className="pt-16">
+          <AnimatedText
+            text="Passion Fuels Purpose!"
+            className="mb-16 !leading-tight lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
+          />
+          <div className="grid w-full grid-cols-8 gap-16 sm:gap-8">
+            <div className="col-span-4 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8">
+              <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
+                {biography[0].Title}
+              </h2>
+              {biography[0].Biography.length === 0 ? null : (
+                <>
+                  {biography[0].Biography.map((bio: string, index: number) => {
+                    return (
+                      <p key={index} className="font-medium my-4">
+                        {bio}
+                        <br />
+                      </p>
+                    );
+                  })}
+                </>
+              )}
+              {/* <p className="font-medium">{biography[0].Biography}</p> */}
+            </div>
+
+            <div
+              className="col-span-4 relative h-max rounded-2xl border-2 border-solid border-dark
+bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8
+"
+            >
+              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" />
+              <Image
+                src={profilePic}
+                alt="Codebucks"
+                className="w-full h-auto rounded-2xl"
+                priority
+                sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              30vw"
+              />
+            </div>
+          </div>
+
+          <Skills skills={skills} />
+          <Experiences experience={experience} />
+          <Education education={education} />
+        </Layout>
+      </main>
+    </>
+  );
+};
+
+export default AboutPage;
+
+export async function getStaticProps() {
+  // Call an external API endpoint to get skills
+  const skills = await getSkills();
+  const experience = await getExperiences();
+  const education = await getEducations();
+  const biography = await getBiography();
+  return {
+    props: {
+      skills,
+      experience,
+      education,
+      biography,
+    },
+  };
+}
