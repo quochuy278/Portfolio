@@ -52,7 +52,7 @@ module.exports = {
         "3xl": "0 15px 15px 1px rgba(80,230,217, 0.4)",
       },
     },
-    screen: {
+    screens: {
       "2xl": { max: "1535px" },
       // => @media (max-width: 1535px) { ... }
 
