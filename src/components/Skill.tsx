@@ -1,5 +1,4 @@
 import React from "react";
-import LoadingSpinner from "./icons/LoadingSpinner";
 import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/sanity-client/sanityClient";
