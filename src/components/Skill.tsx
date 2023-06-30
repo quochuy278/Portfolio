@@ -10,12 +10,7 @@ const urlFor = (source: string) => {
 };
 
 const Skill = ({ skill }: any) => {
-  if (!skill) {
-    return <LoadingSpinner />;
-  }
-
   const imageUrl = urlFor(skill.Icon.icon[0].asset._ref).url();
-
   return (
     <li className="w-full h-18 flex items-center justify-center p-3">
       <div className="flex flex-col justify-center items-center">
