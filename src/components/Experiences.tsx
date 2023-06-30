@@ -4,7 +4,6 @@ import Experience from "./Experience";
 
 const Experiences = ({ experience }: any) => {
   const ref = useRef(null);
-  console.log(experience);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center start"],

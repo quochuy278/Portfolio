@@ -19,7 +19,6 @@ import { AnimatedText } from "@/components/AnimatedText";
 import profilePic from "../../public/images/image.jpg";
 
 const AboutPage = ({ skills, experience, education, biography }: any) => {
-  console.log(biography);
   return (
     <>
       <Head>
