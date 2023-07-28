@@ -7,14 +7,13 @@ import Layout from "@/components/Layout";
 import Skills from "@/components/Skills";
 import TransitionEffect from "@/components/TransitionEffect";
 
+import { AnimatedText } from "@/components/AnimatedText";
 import {
   getBiography,
   getEducations,
   getExperiences,
   getSkills,
 } from "@/sanity-client/sanityClient";
-import { AnimatedNumbers } from "@/components/AnimatedNumber";
-import { AnimatedText } from "@/components/AnimatedText";
 
 import profilePic from "../../public/images/image.jpg";
 
