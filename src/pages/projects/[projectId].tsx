@@ -1,12 +1,12 @@
 import Layout from "@/components/Layout";
 import TransitionEffect from "@/components/TransitionEffect";
-import { getCurrentUser, getProjectsById } from "@/sanity-client/sanityClient";
+import { getProjectsById } from "@/sanity-client/sanityClient";
 import { GetStaticPaths, GetStaticPropsContext } from "next";
 import Head from "next/head";
 
-const ProjectDetail = ({ project, user }: any) => {
+const ProjectDetail = ({ project }: any) => {
   console.log(project);
-  console.log(user);
+
   return (
     <div>
       <Head>
@@ -372,13 +372,10 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   // Call an external API endpoint to get skills
   const { params } = context;
   const projectId = params!.projectId as string;
-
   const project = await getProjectsById(projectId as string);
-  const user = await getCurrentUser();
   return {
     props: {
       project,
-      user,
     },
   };
 }
