@@ -31,7 +31,7 @@ md:w-[2px] md:left-[30px] xs:left-[20px] dark:bg-primaryDark dark:shadow-3xl
                 company={element.Company}
                 companyLink={element.Link}
                 time={element.Time}
-                addres={element.Address}
+                address={element.Address}
                 work={element.Work}
               />
             );
