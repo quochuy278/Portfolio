@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const useThemeSwitcher = () => {
+const useThemeSwitcher = () : [string, React.Dispatch<React.SetStateAction<string>>]=> {
 
     const preferDarkQuery = "(prefers-color-scheme: dark)";
     const [mode, setMode] = useState<string>("");
