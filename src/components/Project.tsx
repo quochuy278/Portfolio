@@ -7,7 +7,7 @@ import { transformToUrl } from "@/utils/imageBuilder";
 
 const FramerImage = motion(Image);
 
-const Project = ({
+const  Project = ({
   id,
   title,
   type,
@@ -19,7 +19,7 @@ const Project = ({
   return (
     <article
       className="w-full flex flex-col items-center justify-center rounded-2xl 
-      border border-solid border-dark bg-light p-6 relative mb-[2rem] dark:bg-dark dark:border-light xs:p-4
+      border border-solid border-dark bg-light p-6 relative mb-[4rem] dark:bg-dark dark:border-light xs:p-4
       "
     >
       <div
@@ -28,7 +28,7 @@ const Project = ({
       "
       />
       <Link
-        href={`projects/${link}`}
+        href={`projects/${id}`}
         className="w-full cursor-pointer overflow-hidden rounded-lg"
       >
         <FramerImage
