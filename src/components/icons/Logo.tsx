@@ -9,9 +9,9 @@ export const Logo = () => {
     <div className="flex items-center justify-center mt-2">
       <MotionLink
         href="/"
-        className="w-32 h-16 bg-dark text-light flex items-center justify-center
+        className='w-16 h-16 bg-dark text-light flex items-center justify-center
         rounded-full text-2xl font-bold border border-solid border-transparent dark:border-light
-        "
+        '
         whileHover={{
           backgroundColor: [
             "#121212",
@@ -24,7 +24,7 @@ export const Logo = () => {
           transition: { duration: 1, repeat: Infinity },
         }}
       >
-        Huy Bui
+          HB
       </MotionLink>
     </div>
   );

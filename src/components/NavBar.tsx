@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { CustomLink } from "./custom";
 import { GithubIcon, LinkedInIcon, Logo, MoonIcon, SunIcon } from "./icons";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
+import MobileView from "./MobileView";
 
 const NavBar = () => {
   const [mode, setMode] = useThemeSwitcher();
@@ -79,6 +80,11 @@ const NavBar = () => {
           </button>
         </nav>
       </div>
+
+                {isOpen ? (<>
+                <MobileView className="" mode={mode} setMode={setMode} handleClick={handleClick}/>
+                </>) : null}
+
       <div className="absolute left-[50%] top-2 translate-x-[-50%]">
         <Logo />
       </div>
