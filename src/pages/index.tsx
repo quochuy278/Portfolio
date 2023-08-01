@@ -8,19 +8,17 @@ import { Fragment } from "react";
 import profilePic from "../../public/images/image.jpg";
 import { LinkArrow } from "@/components/icons";
 import TransitionEffect from "@/components/TransitionEffect";
+import DynamicHead from "@/components/DynamicHead";
 
 export default function Home() {
   return (
     <Fragment>
-      <Head>
-        <title>Huy Bui's Portfolio</title>
-        <meta
-          name="description"
-          content="Explore CodeBucks's Next.js developer portfolio and 
-        discover the latest webapp projects and software engineering articles. 
-        Showcase your skills as a full-stack developer and software engineer."
-        />
-      </Head>
+      
+      <DynamicHead
+        title="Huy Bui's Portfolio"
+        content="Welcome to Huy Bui's Portfolio! Explore a showcase of web app projects and software engineering articles crafted by a talented React and Node.js developer. Join Huy's journey of innovation and excellence in the world of web development. Discover inspiring projects and gain insights into cutting-edge technologies for your own software endeavors."
+      />
+
       <TransitionEffect />
       <main className="flex items-center text-dark w-full min-h-screen dark:text-light sm:items-start">
         <Layout className="pt-0 md:pt-16 sm:pt-16">
