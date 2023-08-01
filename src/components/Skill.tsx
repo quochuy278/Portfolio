@@ -1,15 +1,9 @@
-import React from "react";
+import { transformToUrl } from "@/utils/imageBuilder";
 import Image from "next/image";
-import imageUrlBuilder from "@sanity/image-url";
-import { client } from "@/sanity-client/sanityClient";
 
-const builder = imageUrlBuilder(client);
-const urlFor = (source: string) => {
-  return builder.image(source);
-};
 
 const Skill = ({ skill }: any) => {
-  const imageUrl = urlFor(skill.Icon.icon[0].asset._ref).url();
+  const imageUrl = transformToUrl(skill.Icon.icon[0].asset._ref);
   return (
     <li className="w-full h-18 flex items-center justify-center p-3">
       <div className="flex flex-col justify-center items-center">

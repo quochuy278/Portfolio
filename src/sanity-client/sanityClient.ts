@@ -13,7 +13,7 @@ export const client = createClient({
 
 // // uses GROQ to query content: https://www.sanity.io/docs/groq
 export async function getSkills() {
-  const skills = await client.fetch(`*[_type == "Skills"]`);
+  const skills = await client.fetch(`*[_type == "Skill"]`);
   return skills;
 }
 
@@ -30,4 +30,26 @@ export async function getEducations() {
 export async function getBiography() {
   const biography = await client.fetch(`*[_type == "Biography"]`);
   return biography;
+}
+
+export async function getProjects() {
+  const projects = await client.fetch(`*[_type == "Projects"]`);
+  return projects;
+}
+
+export async function getProjectsById(projectId: string) {
+  const project = await client.fetch(
+    `*[_type == "Projects" && _id == "${projectId}"]`
+  );
+  return project;
+}
+
+export async function getReferenceDocument(ref:string) {
+  const document = await client.getDocument(ref)
+  return document
+}
+
+export async function getMutitpleReferenceDocument(ref:string[]) {
+  const document = await client.getDocuments(ref)
+  return document
 }

@@ -7,30 +7,24 @@ import Layout from "@/components/Layout";
 import Skills from "@/components/Skills";
 import TransitionEffect from "@/components/TransitionEffect";
 
+import { AnimatedText } from "@/components/AnimatedText";
 import {
   getBiography,
   getEducations,
   getExperiences,
   getSkills,
 } from "@/sanity-client/sanityClient";
-import { AnimatedNumbers } from "@/components/AnimatedNumber";
-import { AnimatedText } from "@/components/AnimatedText";
 
 import profilePic from "../../public/images/image.jpg";
+import DynamicHead from "@/components/DynamicHead";
 
 const AboutPage = ({ skills, experience, education, biography }: any) => {
-  console.log(biography);
   return (
     <>
-      <Head>
-        <title>Portfolio | About Page</title>
-        <meta
-          name="description"
-          content="Learn more about CodeBucks, a Next.js developer with a passion for 
-        creating innovative solutions. Discover tips for building a developer portfolio and insights on 
-        full-stack development, front-end development, and back-end development."
-        />
-      </Head>
+      <DynamicHead
+        title="Portfolio | About me"
+        content="Meet Huy Bui, a fresh graduate and aspiring software developer specializing in web development. With a focus on React and Node.js, Huy is dedicated to writing clean and maintainable code to deliver high-quality software applications. Join Huy's journey of continuous learning and growth in the dynamic field of software development."
+      />
       <TransitionEffect />
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
@@ -66,7 +60,7 @@ bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span
               <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light" />
               <Image
                 src={profilePic}
-                alt="Codebucks"
+                alt="Huy Bui"
                 className="w-full h-auto rounded-2xl"
                 priority
                 sizes="(max-width: 768px) 100vw,
