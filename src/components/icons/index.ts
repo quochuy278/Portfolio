@@ -2,10 +2,11 @@ import { GithubIcon } from "./Github";
 import { LinkedInIcon } from "./Linkedin";
 import { Logo } from "./Logo";
 import { LinkArrow } from "./LinkArrow";
-
+import { MoonIcon } from "./MoonIcon";
+import { SunIcon } from "./SunIcon";
 
 export interface IconsProps {
   className?: string;
 }
 
-export { GithubIcon, LinkedInIcon, Logo, LinkArrow};
+export { GithubIcon, LinkedInIcon, Logo, LinkArrow, MoonIcon, SunIcon};
