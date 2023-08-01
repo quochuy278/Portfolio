@@ -1,7 +1,5 @@
 # My Portfolio
 
-![Portfolio Preview](/path/to/portfolio/screenshot.png)
-
 Welcome to my portfolio! This repository contains the code for my personal website, showcasing my skills, projects, and professional experience as a developer.
 
 ## Table of Contents
@@ -38,6 +36,10 @@ Visit `http://localhost:3000` in your web browser to see the portfolio.
 - React.js: A popular JavaScript library for building user interfaces.
 - Tailwind CSS: A utility-first CSS framework for rapid UI development.
 - Sanity.js: A headless CMS that allows content management for the projects section of the portfolio.
+
+## Deployed Link
+
+The project is deployed and accessible at: `https://huybui.netlify.app/`
 
 ## Contributing
 Contributions to this portfolio are welcome! If you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request.
