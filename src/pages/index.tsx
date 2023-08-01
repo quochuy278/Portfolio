@@ -5,10 +5,11 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
-import profilePic from "../../public/images/image.jpg";
+import profilePic from "../../public/images/profile.webp";
 import { LinkArrow } from "@/components/icons";
 import TransitionEffect from "@/components/TransitionEffect";
 import DynamicHead from "@/components/DynamicHead";
+import HireMe from "@/components/HireMe";
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
             <div className="w-1/2 md:w-full">
               <Image
                 src={profilePic}
-                alt="CodeBucks"
+                alt="Profile"
                 className="w-full h-auto lg:hidden md:inline-block md:w-full"
                 priority
                 sizes="(max-width: 768px) 100vw,
@@ -74,7 +75,7 @@ export default function Home() {
           </div>
         </Layout>
 
-        {/* <HireMe /> */}
+        <HireMe />
       </main>
     </Fragment>
   );
