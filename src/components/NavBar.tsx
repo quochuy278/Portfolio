@@ -11,10 +11,10 @@ const NavBar = () => {
   };
   return (
     <header
-    className="w-full px-32 py-8 font-medium flex items-center justify-between
+      className="w-full px-32 py-8 font-medium flex items-center justify-between
   dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8
   "
-  >
+    >
       <button
         className=" flex-col justify-center items-center hidden lg:flex"
         onClick={handleClick}
@@ -40,7 +40,6 @@ const NavBar = () => {
           <CustomLink href="/" title="Home" className="mr-4" />
           <CustomLink href="/about" title="About" className="mx-4" />
           <CustomLink href="/projects" title="Projects" className="mx-4" />
-          <CustomLink href="/articles" title="Articles" className="ml-4" />
         </nav>
 
         <nav className="flex items-center justify-center flex-wrap">
@@ -53,7 +52,7 @@ const NavBar = () => {
           >
             <GithubIcon />
           </motion.a>
-          
+
           <motion.a
             href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
             target={"_blank"}
