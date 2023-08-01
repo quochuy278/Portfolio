@@ -31,19 +31,16 @@ const ProjectDetail = ({ project, author, skills, images }: any) => {
       // add plugins here
     ]
   );
-  console.log(images);
   const {
-    name,
     role,
     title,
-    type,
     description,
     contribution,
     solutions,
     challenges,
     conclusion,
   } = project[0];
-  console.log(project[0]);
+ 
   const authorImageUrl = transformToUrl(author.profile_image[0].asset._ref);
   return (
     <div>
@@ -147,11 +144,9 @@ const ProjectDetail = ({ project, author, skills, images }: any) => {
             </div>
             {loaded && instanceRef.current && (
               <div className="flex py-[10px] px-0 justify-center">
-                {[
-                  ...Array(
-                    instanceRef.current.track.details.slides.length
-                  ).keys(),
-                ].map((idx) => {
+                {Array.from(
+                  Array(instanceRef.current.track.details.slides.length).keys()
+                ).map((idx) => {
                   return (
                     <button
                       key={idx}
@@ -208,40 +203,3 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   };
 };
 
-function LeftArrow(props: any) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className="w-6 h-6"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M15.75 19.5L8.25 12l7.5-7.5"
-      />
-    </svg>
-  );
-}
-
-function RightArrow(props: any) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className="w-6 h-6"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M8.25 4.5l7.5 7.5-7.5 7.5"
-      />
-    </svg>
-  );
-}

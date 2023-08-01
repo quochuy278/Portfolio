@@ -9,7 +9,6 @@ import { Project } from "@/components/Project";
 import DynamicHead from "@/components/DynamicHead";
 
 const ProjectPage = ({ projects }: any) => {
-  console.log(projects);
   return (
     <>
       <Head>
