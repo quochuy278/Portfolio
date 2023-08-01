@@ -16,19 +16,15 @@ import {
 } from "@/sanity-client/sanityClient";
 
 import profilePic from "../../public/images/image.jpg";
+import DynamicHead from "@/components/DynamicHead";
 
 const AboutPage = ({ skills, experience, education, biography }: any) => {
   return (
     <>
-      <Head>
-        <title>Portfolio | About Page</title>
-        <meta
-          name="description"
-          content="Learn more about CodeBucks, a Next.js developer with a passion for 
-        creating innovative solutions. Discover tips for building a developer portfolio and insights on 
-        full-stack development, front-end development, and back-end development."
-        />
-      </Head>
+      <DynamicHead
+        title="Portfolio | About me"
+        content="Meet Huy Bui, a fresh graduate and aspiring software developer specializing in web development. With a focus on React and Node.js, Huy is dedicated to writing clean and maintainable code to deliver high-quality software applications. Join Huy's journey of continuous learning and growth in the dynamic field of software development."
+      />
       <TransitionEffect />
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">

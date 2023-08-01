@@ -6,17 +6,16 @@ import TransitionEffect from "@/components/TransitionEffect";
 import { AnimatedText } from "@/components/AnimatedText";
 import { getProjects } from "@/sanity-client/sanityClient";
 import { Project } from "@/components/Project";
+import DynamicHead from "@/components/DynamicHead";
 
 const ProjectPage = ({ projects }: any) => {
   console.log(projects);
   return (
     <>
       <Head>
-        <title>Portfolio | Projects Page</title>
-        <meta
-          name="description"
-          content="Discover the latest webapp projects created by CodeBucks, a Next.js developer with 
-        expertise in React.js and full-stack development. Browse software engineering articles and tutorials for tips on creating your own portfolio."
+        <DynamicHead
+          title="Portfolio | My Projects"
+          content="Discover the latest web app projects by Huy Bui, a passionate software developer with expertise in React and Node.js. Explore innovative software applications and articles on web development for insights and inspiration in creating your own projects."
         />
       </Head>
       <TransitionEffect />
