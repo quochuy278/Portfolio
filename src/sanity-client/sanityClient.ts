@@ -37,6 +37,11 @@ export async function getProjects() {
   return projects;
 }
 
+export async function getHero() {
+  const hero = await client.fetch(`*[_type == "Hero"]`);
+  return hero
+}
+
 export async function getProjectsById(projectId: string) {
   const project = await client.fetch(
     `*[_type == "Projects" && _id == "${projectId}"]`
