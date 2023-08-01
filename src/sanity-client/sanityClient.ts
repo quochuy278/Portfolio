@@ -44,3 +44,12 @@ export async function getProjectsById(projectId: string) {
   return project;
 }
 
+export async function getReferenceDocument(ref:string) {
+  const document = await client.getDocument(ref)
+  return document
+}
+
+export async function getMutitpleReferenceDocument(ref:string[]) {
+  const document = await client.getDocuments(ref)
+  return document
+}
