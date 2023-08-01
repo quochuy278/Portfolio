@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { CustomLink } from "./custom";
-import { GithubIcon, LinkedInIcon, Logo } from "./icons";
+import { GithubIcon, LinkedInIcon, Logo, MoonIcon, SunIcon } from "./icons";
+import useThemeSwitcher from "./hooks/useThemeSwitcher";
 
 const NavBar = () => {
+  const [mode, setMode] = useThemeSwitcher();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -63,7 +65,7 @@ const NavBar = () => {
             <LinkedInIcon />
           </motion.a>
 
-          {/* <button
+          <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
             className={`ml-3 flex items-center justify-center rounded-full p-1 ease
       ${mode === "light" ? "bg-dark text-light" : "bg-light text-dark"}
@@ -74,7 +76,7 @@ const NavBar = () => {
             ) : (
               <MoonIcon className={"fill-dark"} />
             )}
-          </button> */}
+          </button>
         </nav>
       </div>
       <div className="absolute left-[50%] top-2 translate-x-[-50%]">
