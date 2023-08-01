@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { AnimatedText } from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
@@ -10,11 +9,12 @@ import { LinkArrow } from "@/components/icons";
 import TransitionEffect from "@/components/TransitionEffect";
 import DynamicHead from "@/components/DynamicHead";
 import HireMe from "@/components/HireMe";
+import { getHero } from "@/sanity-client/sanityClient";
 
-export default function Home() {
+export default function Home({ hero }: any) {
+  const { title, hero_text } = hero[0];
   return (
     <Fragment>
-      
       <DynamicHead
         title="Huy Bui's Portfolio"
         content="Welcome to Huy Bui's Portfolio! Explore a showcase of web app projects and software engineering articles crafted by a talented React and Node.js developer. Join Huy's journey of innovation and excellence in the world of web development. Discover inspiring projects and gain insights into cutting-edge technologies for your own software endeavors."
@@ -37,16 +37,13 @@ export default function Home() {
             </div>
             <div className="w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center xl:text-left">
               <AnimatedText
-                text="Turning Vision Into Reality With Code And Design."
+                text={title}
                 className="!text-6xl !text-left 
                 xl:!text-5xl lg:!text-center lg:!text=6xl md:!text-5xl sm:!text-3xl
                 "
               />
               <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
-                As a skilled full-stack developer, I am dedicated to turning
-                ideas into innovative web applications. Explore my latest
-                projects and articles, showcasing my expertise in React.js and
-                web development.
+                {hero_text}
               </p>
               <div className="flex items-center self-start mt-2 lg:self-center">
                 <Link
@@ -79,4 +76,14 @@ export default function Home() {
       </main>
     </Fragment>
   );
+}
+
+export async function getStaticProps() {
+  // Call an external API endpoint to get skills
+  const hero = await getHero();
+  return {
+    props: {
+      hero,
+    },
+  };
 }
