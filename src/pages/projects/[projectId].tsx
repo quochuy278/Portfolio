@@ -56,7 +56,6 @@ const ProjectDetail = ({ project, author, skills, images }: any) => {
       </Head>
       <TransitionEffect />
       <Layout>
-        <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
           <div className="flex justify-between px-4 mx-auto max-w-screen-xl ">
             <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
               <header className="mb-4 lg:mb-6 not-format">
@@ -87,19 +86,19 @@ const ProjectDetail = ({ project, author, skills, images }: any) => {
                   {title}
                 </h1>
               </header>
-              <h4 className="text-2xl strong">1. Project Description</h4> <br />
-              <p className="lead">{description}</p>
+              <h4 className="text-2xl strong dark:text-white">1. Project Description</h4> <br />
+              <p className="lead dark:text-white">{description}</p>
               <br />
-              <h4 className="text-2xl strong">2. Contribution</h4> <br />
-              <p>{contribution}</p>
+              <h4 className="text-2xl strong dark:text-white">2. Contribution</h4> <br />
+              <p className="dark:text-white">{contribution}</p>
               <br />
-              <h4 className="text-2xl strong">3. Challenges</h4> <br />
-              <p> {challenges}</p>
+              <h4 className="text-2xl strong dark:text-white">3. Challenges</h4> <br />
+              <p className="dark:text-white"> {challenges}</p>
               <br />
-              <h4 className="text-2xl strong">4. Solutions</h4> <br />
-              <p> {solutions}</p>
+              <h4 className="text-2xl strong dark:text-white">4. Solutions</h4> <br />
+              <p className="dark:text-white"> {solutions}</p>
               <br />
-              <h4 className="text-2xl strong">5. Tech Stacks</h4> <br />
+              <h4 className="text-2xl strong dark:text-white">5. Tech Stacks</h4> <br />
               <div className="w-full flex justify-around">
                 {skills.map((skill: SanityDocument) => {
                   const skillImageUrl = transformToUrl(
@@ -117,7 +116,7 @@ const ProjectDetail = ({ project, author, skills, images }: any) => {
                 })}
               </div>
               <br />
-              <h4 className="text-2xl strong">6. Images</h4>
+              <h4 className="text-2xl strong dark:text-white">6. Images</h4>
               <br />
               <div ref={sliderRef} className="keen-slider flex">
                 {images.map((image: SanityDocument) => {
@@ -158,12 +157,11 @@ const ProjectDetail = ({ project, author, skills, images }: any) => {
                   })}
                 </div>
               )}
-              <h4 className="text-2xl strong">7. Conclusion</h4>
+              <h4 className="text-2xl strong dark:text-white">7. Conclusion</h4>
               <br/>
-              <div>{conclusion}</div>
+              <div className="dark:text-white">{conclusion}</div>
             </article>
           </div>
-        </main>
       </Layout>
     </div>
   );
