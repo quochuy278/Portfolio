@@ -4,10 +4,12 @@ Welcome to my portfolio! This repository contains the code for my personal websi
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Introduction](#mobile-view)
 - [Key Features](#key-features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
+- [Deployed Link](#deployed-link)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -16,6 +18,10 @@ This portfolio is designed to provide an overview of my journey as a software de
 - Home Page: A brief introduction to the portfolio with navigation links.
 - About Me: Details about my background, skills, education, and work experience.
 - Projects: Showcasing the projects I have worked on, including descriptions and links to demos or repositories.
+
+## Mobile View
+
+Please note that the mobile view of the website is optimized for Android devices. While it should work on iOS devices as well, the design and responsiveness have been primarily tested on Android. If you encounter any issues while accessing the website on iOS, I recommend trying it on an Android device or a desktop browser for the best experience.
 
 ## Key Features
 - Mobile Responsive: The portfolio is optimized to work smoothly on various devices, including mobile phones and tablets.
