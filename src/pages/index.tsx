@@ -45,27 +45,40 @@ export default function Home({ hero }: any) {
               <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
                 {hero_text}
               </p>
-              <div className="flex items-center self-start mt-2 lg:self-center">
-                <Link
-                  href="/cv.pdf"
-                  target={"_blank"}
-                  className="flex items-center bg-dark text-light p-2.5 px-6
+              <div className="w-full flex flex-col lg:items-center">
+                <div className="flex items-center self-start mt-2 lg:self-center">
+                  <Link
+                    href="/cv.pdf"
+                    target={"_blank"}
+                    className="flex items-center bg-dark text-light p-2.5 px-6
                   rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
                   border-2 border-solid border-transparent hover:border-dark
                   
                   dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light
                   hover:dark:border-light md:p-2 md:px-4 md:text-base
                   "
-                  download={true}
-                >
-                  Resume <LinkArrow className={"w-6 ml-1"} />
-                </Link>
+                    download={true}
+                  >
+                    Resume <LinkArrow className={"w-6 ml-1"} />
+                  </Link>
+                  <Link
+                    href={`mailto:${process.env.NEXT_PUBLIC_PERSONAL_EMAIL}`}
+                    target={"_blank"}
+                    className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light md:text-base"
+                  >
+                    Contact
+                  </Link>
+                </div>
                 <Link
-                  href={`mailto:${process.env.NEXT_PUBLIC_PERSONAL_EMAIL}`}
-                  target={"_blank"}
-                  className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light md:text-base"
+                  href={`/about`}
+                  className="flex items-center bg-dark text-light p-2.5 px-6 mt-2 w-fit flex-start
+                rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
+                border-2 border-solid border-transparent hover:border-dark sm:px-[1.75rem] md:px-[1.75rem] lg:px-[2rem]
+                
+                dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light
+                hover:dark:border-light md:p-2 md:px-4 md:text-base xl-hidden"
                 >
-                  Contact
+                  Check my bio here
                 </Link>
               </div>
             </div>
