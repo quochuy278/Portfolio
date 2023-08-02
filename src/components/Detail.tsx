@@ -6,7 +6,7 @@ const Details = ({ type, time, place, info }: any) => {
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between "
+      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between text-justify"
     >
       <LiIcon reference={ref} />
       <motion.div
@@ -26,4 +26,4 @@ const Details = ({ type, time, place, info }: any) => {
   );
 };
 
-export {Details}
+export { Details };

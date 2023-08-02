@@ -7,7 +7,7 @@ import { transformToUrl } from "@/utils/imageBuilder";
 
 const FramerImage = motion(Image);
 
-const  Project = ({
+const Project = ({
   id,
   title,
   type,
@@ -51,8 +51,7 @@ const  Project = ({
           {type}
         </span>
         <Link
-          href={link ? link : "#"}
-          target="_blank"
+          href={`projects/${id}`}
           className="hover:underline underline-offset-2"
         >
           <h2 className="my-2 w-full text-left text-3xl font-bold lg:text-2xl">
@@ -61,13 +60,18 @@ const  Project = ({
         </Link>
 
         <div className="w-full flex items-center justify-between">
-          <Link
-            href={link ? link : "#"}
-            target="_blank"
-            className="text-lg font-semibold underline md:text-base"
-          >
-            Visit
-          </Link>
+          {link ? (
+            <Link
+              href={link}
+              target="_blank"
+              className="text-lg font-semibold underline md:text-base"
+            >
+              Visit Company Site
+            </Link>
+          ) : (
+            <>Link is not available</>
+          )}
+
           <Link
             href={github ? github : "#"}
             target="_blank"
