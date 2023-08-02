@@ -1,6 +1,4 @@
-import Head from "next/head";
 import Image from "next/image";
-
 import Education from "@/components/Education";
 import Experiences from "@/components/Experiences";
 import Layout from "@/components/Layout";
@@ -41,7 +39,7 @@ const AboutPage = ({ skills, experience, education, biography }: any) => {
                 <>
                   {biography[0].Biography.map((bio: string, index: number) => {
                     return (
-                      <p key={index} className="font-medium my-4">
+                      <p key={index} className="font-medium my-4 text-justify">
                         {bio}
                         <br />
                       </p>

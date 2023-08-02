@@ -7,11 +7,11 @@ import {
 } from "@/sanity-client/sanityClient";
 import { transformToUrl } from "@/utils/imageBuilder";
 import { GetStaticPaths, GetStaticPropsContext } from "next";
-import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import { SanityAssetDocument, SanityDocument } from "@sanity/client";
+import { SanityDocument } from "@sanity/client";
 import { useState } from "react";
 import DynamicHead from "@/components/DynamicHead";
 const ProjectDetail = ({ project, author, skills, images }: any) => {
@@ -49,7 +49,7 @@ const ProjectDetail = ({ project, author, skills, images }: any) => {
       <TransitionEffect />
       <Layout>
         <div className="flex justify-between px-4 mx-auto max-w-screen-xl ">
-          <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+          <article className="mx-auto w-full max-w-2xl format format-sm text-justify sm:format-base lg:format-lg format-blue dark:format-invert">
             <header className="mb-4 lg:mb-6 not-format">
               <address className="flex items-center mb-6 not-italic">
                 <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
@@ -106,7 +106,7 @@ const ProjectDetail = ({ project, author, skills, images }: any) => {
               5. Tech Stacks
             </h4>{" "}
             <br />
-            <div className="w-full flex justify-around">
+            <div className="w-full flex justify-around flex-wrap gap-2">
               {skills.map((skill: SanityDocument) => {
                 const skillImageUrl = transformToUrl(
                   skill.Icon.icon[0].asset._ref
@@ -162,6 +162,11 @@ const ProjectDetail = ({ project, author, skills, images }: any) => {
                 })}
               </div>
             )}
+            {project[0].Link ? (
+              <Link href={project[0].Link} target={"_blank"} className="w-full flex justify-center mb-2 font-bold dark:text-white dark:underline">
+                Check out the website here
+              </Link>
+            ) : null}
             <h4 className="text-2xl strong dark:text-white">7. Conclusion</h4>
             <br />
             <div className="dark:text-white">{conclusion}</div>
@@ -202,4 +207,3 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
     fallback: "blocking", //indicates the type of fallback
   };
 };
-

@@ -8,7 +8,7 @@ const Skills = ({ skills }: any) => {
       </h2>
 
       <div className="w-full flex justify-center items-center">
-        <ul className="w-full grid grid-cols-4 gap-2 gap-y-5 2xl:grid-cols-6 xl:grid-cols-5 ">
+        <ul className="w-full grid grid-cols-4 gap-2 gap-y-5 2xl:grid-cols-6 xl:grid-cols-5 sm:grid-cols-4 xs:grid-cols-3">
           {skills.map((skill: any) => {
             return <Skill skill={skill} key={skill._id} />;
           })}
