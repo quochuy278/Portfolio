@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import LiIcon from "./Lilcon";
 import { motion, useScroll } from "framer-motion";
+import Link from "next/link";
 
 const Experience = ({
   position,
@@ -36,6 +37,7 @@ const Experience = ({
           {time} | {address}
         </span>
         <p className="font-medium w-full md:text-sm">{work}</p>
+        <Link href={'/projects'} className="underline">More detail ...</Link>
       </motion.div>
     </li>
   );

@@ -47,7 +47,6 @@ const AboutPage = ({ skills, experience, education, biography }: any) => {
                   })}
                 </>
               )}
-              {/* <p className="font-medium">{biography[0].Biography}</p> */}
             </div>
 
             <div
