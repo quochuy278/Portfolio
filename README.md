@@ -4,7 +4,7 @@ Welcome to my portfolio! This repository contains the code for my personal websi
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Introduction](#mobile-view)
+- [Mobile View](#mobile-view)
 - [Key Features](#key-features)
 - [Installation](#installation)
 - [Usage](#usage)
