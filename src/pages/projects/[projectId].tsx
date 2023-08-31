@@ -31,16 +31,17 @@ const ProjectDetail = ({ project, author, skills, images }: any) => {
       // add plugins here
     ]
   );
+  console.log(project);
   const {
     role,
     title,
     description,
+    challenges,
     contribution,
     solutions,
-    challenges,
     conclusion,
   } = project[0];
- 
+
   const authorImageUrl = transformToUrl(author.profile_image[0].asset._ref);
   return (
     <div>
@@ -94,7 +95,23 @@ const ProjectDetail = ({ project, author, skills, images }: any) => {
               3. Challenges
             </h4>{" "}
             <br />
-            <p className="dark:text-white"> {challenges}</p>
+            {challenges.map((challenge: any, index: number) => {
+              return (
+                <div key={index}>
+                  <h5 className="dark:text-white">
+                    {challenge.challengeTitle}
+                  </h5>
+                  <br />
+                  <p className="dark:text-white" key={index}>
+                    {" "}
+                    {challenge.challengeDescription}
+                  </p>
+                  <br />
+                </div>
+              );
+            })}
+            <br />
+            {/* <p className="dark:text-white"> {challenges}</p> */}
             <br />
             <h4 className="text-2xl strong dark:text-white">
               4. Solutions
@@ -163,7 +180,11 @@ const ProjectDetail = ({ project, author, skills, images }: any) => {
               </div>
             )}
             {project[0].Link ? (
-              <Link href={project[0].Link} target={"_blank"} className="w-full flex justify-center mb-2 font-bold dark:text-white dark:underline">
+              <Link
+                href={project[0].Link}
+                target={"_blank"}
+                className="w-full flex justify-center mb-2 font-bold dark:text-white dark:underline"
+              >
                 Check out the website here
               </Link>
             ) : null}
