@@ -7,7 +7,7 @@ export const SunIcon = ({ className, ...rest }: IconsProps) => (
     height="24"
     viewBox="0 0 24 24"
     {...rest}
-    className={`w-full h-auto ${className}`}
+    className={`${className}`}
   >
     <g
       fill="none"
