@@ -7,7 +7,7 @@ export const MoonIcon = ({ className, ...rest }: IconsProps) => (
     height="24"
     viewBox="0 0 24 24"
     {...rest}
-    className={`w-full h-auto ${className}`}
+    className={`${className}`}
   >
     <rect x="0" y="0" width="24" height="24" fill="rgba(255, 255, 255, 0)" />
     <g
